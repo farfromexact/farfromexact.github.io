@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-label="Streamlit regime overview dashboard example">
+  <rect width="1440" height="900" fill="#f7f8fb"/>
+  <rect x="0" y="0" width="1440" height="72" fill="#ffffff"/>
+  <text x="44" y="45" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="700" fill="#151922">Options Playbook Engine</text>
+  <text x="1188" y="43" font-family="Inter,Arial,sans-serif" font-size="16" fill="#596171">2026-06-22</text>
+  <rect x="42" y="104" width="280" height="112" rx="8" fill="#ffffff" stroke="#dfe3eb"/>
+  <rect x="338" y="104" width="280" height="112" rx="8" fill="#ffffff" stroke="#dfe3eb"/>
+  <rect x="634" y="104" width="280" height="112" rx="8" fill="#ffffff" stroke="#dfe3eb"/>
+  <rect x="930" y="104" width="468" height="112" rx="8" fill="#ffffff" stroke="#dfe3eb"/>
+  <text x="66" y="138" font-family="Inter,Arial,sans-serif" font-size="15" fill="#667085">Regime State</text>
+  <text x="66" y="178" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="700" fill="#111827">Event Risk</text>
+  <text x="362" y="138" font-family="Inter,Arial,sans-serif" font-size="15" fill="#667085">Sizing Bias</text>
+  <text x="362" y="178" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="700" fill="#9a3412">Hedge Only</text>
+  <text x="658" y="138" font-family="Inter,Arial,sans-serif" font-size="15" fill="#667085">Gamma Balance</text>
+  <text x="658" y="178" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="700" fill="#1f2937">-0.74%</text>
+  <text x="954" y="138" font-family="Inter,Arial,sans-serif" font-size="15" fill="#667085">Preferred Expression</text>
+  <text x="954" y="178" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="700" fill="#1f2937">Defined-risk structure</text>
+  <rect x="42" y="248" width="856" height="282" rx="8" fill="#ffffff" stroke="#dfe3eb"/>
+  <text x="66" y="286" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="700" fill="#111827">Regime Summary</text>
+  <line x1="66" y1="320" x2="874" y2="320" stroke="#e5e7eb"/>
+  <text x="80" y="356" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="700" fill="#4b5563">Underlying</text>
+  <text x="256" y="356" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="700" fill="#4b5563">State</text>
+  <text x="470" y="356" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="700" fill="#4b5563">Gamma Flip</text>
+  <text x="650" y="356" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="700" fill="#4b5563">Signal</text>
+  <g font-family="Inter,Arial,sans-serif" font-size="18" fill="#111827">
+    <text x="80" y="402">IH</text><text x="256" y="402">Event Risk</text><text x="470" y="402">2,593.72</text><text x="650" y="402">Low</text>
+    <text x="80" y="452">IF</text><text x="256" y="452">Event Risk</text><text x="470" y="452">3,890.59</text><text x="650" y="452">Low</text>
+    <text x="80" y="502">IM</text><text x="256" y="502">Event Risk</text><text x="470" y="502">5,786.00</text><text x="650" y="502">Low</text>
+  </g>
+  <rect x="922" y="248" width="476" height="282" rx="8" fill="#ffffff" stroke="#dfe3eb"/>
+  <text x="946" y="286" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="700" fill="#111827">Gamma Balance</text>
+  <line x1="990" y1="470" x2="1336" y2="470" stroke="#d1d5db"/>
+  <rect x="1024" y="430" width="58" height="40" fill="#2563eb"/>
+  <rect x="1146" y="448" width="58" height="22" fill="#2563eb"/>
+  <rect x="1268" y="416" width="58" height="54" fill="#2563eb"/>
+  <text x="1035" y="500" font-family="Inter,Arial,sans-serif" font-size="14" fill="#4b5563">IH</text>
+  <text x="1157" y="500" font-family="Inter,Arial,sans-serif" font-size="14" fill="#4b5563">IF</text>
+  <text x="1278" y="500" font-family="Inter,Arial,sans-serif" font-size="14" fill="#4b5563">IM</text>
+  <rect x="42" y="562" width="1356" height="280" rx="8" fill="#ffffff" stroke="#dfe3eb"/>
+  <text x="66" y="600" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="700" fill="#111827">Volatility And Surface Context</text>
+  <polyline points="96,782 230,740 365,720 500,690 635,660 770,640 905,600 1040,620 1175,590 1310,610" fill="none" stroke="#2563eb" stroke-width="4"/>
+  <polyline points="96,760 230,755 365,735 500,728 635,710 770,706 905,680 1040,684 1175,672 1310,660" fill="none" stroke="#f59e0b" stroke-width="4"/>
+  <text x="1050" y="632" font-family="Inter,Arial,sans-serif" font-size="15" fill="#2563eb">ATM IV</text>
+  <text x="1050" y="700" font-family="Inter,Arial,sans-serif" font-size="15" fill="#f59e0b">RV20</text>
+</svg>

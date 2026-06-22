@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Far From Exact | Software Systems</title>
+    <meta
+      name="description"
+      content="Local-first financial research systems for portfolio review, solvency analysis, market regime, options playbooks, and disciplined trading workflows."
+    >
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Far From Exact home">
+        <span class="brand-mark"></span>
+        <span>Far From Exact</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#systems">Systems</a>
+        <a href="#map">Map</a>
+        <a href="#catalog">Catalog</a>
+        <a href="https://github.com/farfromexact" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-backdrop" aria-hidden="true">
+          <img src="assets/projects/stats-overview.jpg" alt="">
+          <img src="assets/projects/daily-bias-overview.jpg" alt="">
+          <img src="assets/projects/weather-map.jpg" alt="">
+        </div>
+        <div class="hero-inner">
+          <p class="eyebrow">Local-first financial software lab</p>
+          <h1 id="hero-title">Research systems for imperfect data.</h1>
+          <p class="hero-copy">
+            面向组合复盘、偿付能力、市场风向、期权结构和交易纪律的本地化工具集。
+            每个系统都强调可解释、可回放、可审计，不自动下单，不隐藏假设。
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button primary" href="#systems">View systems</a>
+            <a class="button quiet" href="https://github.com/farfromexact" target="_blank" rel="noreferrer">Open GitHub</a>
+          </div>
+        </div>
+        <div class="hero-strip" aria-label="Project summary">
+          <div>
+            <span class="metric">11</span>
+            <span class="metric-label">public projects</span>
+          </div>
+          <div>
+            <span class="metric">Python</span>
+            <span class="metric-label">Streamlit / PySide6 / pandas</span>
+          </div>
+          <div>
+            <span class="metric">No auto-trading</span>
+            <span class="metric-label">decision support, research, review</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro-section" aria-labelledby="intro-title">
+        <div class="section-label">Positioning</div>
+        <div class="intro-grid">
+          <h2 id="intro-title">把金融判断做成可以每天打开、检查、复盘的软件。</h2>
+          <p>
+            这些项目不是为了证明一个模型永远正确，而是把数据口径、风险约束、规则引擎和人工判断放进同一个界面。
+            它们更像研究台、复盘台和纪律台：先固定数据，再输出判断，再留下证据。
+          </p>
+        </div>
+      </section>
+
+      <section class="section systems-section" id="systems" aria-labelledby="systems-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Featured Systems</p>
+            <h2 id="systems-title">Six tools with a clear operating surface.</h2>
+          </div>
+          <p>
+            每个主项目都有明确输入、规则、输出和展示界面。这里优先展示已经有截图、README 和可复盘工作流的系统。
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="project-card large accent-red">
+            <a class="project-media tall" href="https://github.com/farfromexact/stats" target="_blank" rel="noreferrer" aria-label="Open stats on GitHub">
+              <img src="assets/projects/stats-overview.jpg" alt="Portfolio review dashboard overview screenshot">
+            </a>
+            <div class="project-body">
+              <div class="project-kicker">Portfolio Review</div>
+              <h3>组合管理账户复盘</h3>
+              <p>
+                从月度组合宽表出发，把账户、品种、经理、委内/委外盘子和资产级证据串在同一个 Streamlit 看板里。
+              </p>
+              <ul class="tag-list" aria-label="stats tags">
+                <li>Excel to dashboard</li>
+                <li>Drill-down</li>
+                <li>Data quality</li>
+              </ul>
+              <a class="text-link" href="https://github.com/farfromexact/stats" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card accent-blue">
+            <a class="project-media" href="https://github.com/farfromexact/Solvency" target="_blank" rel="noreferrer" aria-label="Open Solvency on GitHub">
+              <img src="assets/projects/solvency-scenario.svg" alt="Solvency scenario workbench screenshot">
+            </a>
+            <div class="project-body">
+              <div class="project-kicker">Risk Capital</div>
+              <h3>偿付能力资产配置情景测算</h3>
+              <p>
+                读取月度偿付能力底稿，快速比较历史趋势、构建资产调整情景，并解释实际资本、最低资本和充足率变化。
+              </p>
+              <ul class="tag-list" aria-label="Solvency tags">
+                <li>Insurance ALM</li>
+                <li>Scenario</li>
+                <li>Waterfall</li>
+              </ul>
+              <a class="text-link" href="https://github.com/farfromexact/Solvency" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card accent-yellow">
+            <a class="project-media" href="https://github.com/farfromexact/Daily-Bias-Engine" target="_blank" rel="noreferrer" aria-label="Open Daily Bias Engine on GitHub">
+              <img src="assets/projects/daily-bias-overview.jpg" alt="Daily Bias Engine dashboard screenshot">
+            </a>
+            <div class="project-body">
+              <div class="project-kicker">Market Regime</div>
+              <h3>Daily Bias Engine</h3>
+              <p>
+                把 iFinD 快照、利率、ETF、期货、海外市场和期权链整理成可审计因子，输出盘前 Risk-On / Neutral / Risk-Off。
+              </p>
+              <ul class="tag-list" aria-label="Daily Bias Engine tags">
+                <li>Snapshot-first</li>
+                <li>No lookahead</li>
+                <li>Backtest</li>
+              </ul>
+              <a class="text-link" href="https://github.com/farfromexact/Daily-Bias-Engine" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card accent-rose">
+            <a class="project-media" href="https://github.com/farfromexact/Cost-Basis-Engine" target="_blank" rel="noreferrer" aria-label="Open Cost Basis Engine on GitHub">
+              <img src="assets/projects/cost-basis-intraday.jpg" alt="Cost Basis Engine intraday dashboard screenshot">
+            </a>
+            <div class="project-body">
+              <div class="project-kicker">Trading Discipline</div>
+              <h3>Cost Basis Engine</h3>
+              <p>
+                单股票盘中持仓降本研究台：在目标持仓、费用、滑点和可卖数量约束下，判断闭环做 T 是否优于不操作。
+              </p>
+              <ul class="tag-list" aria-label="Cost Basis Engine tags">
+                <li>Inventory-aware</li>
+                <li>Trade intent</li>
+                <li>Audit loop</li>
+              </ul>
+              <a class="text-link" href="https://github.com/farfromexact/Cost-Basis-Engine" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card accent-red">
+            <a class="project-media" href="https://github.com/farfromexact/option-gex" target="_blank" rel="noreferrer" aria-label="Open option-gex on GitHub">
+              <img src="assets/projects/options-regime.svg" alt="Options playbook regime dashboard screenshot">
+            </a>
+            <div class="project-body">
+              <div class="project-kicker">Options Structure</div>
+              <h3>A-Share Options Playbook</h3>
+              <p>
+                把 GEX、gamma flip、wall strength、波动率曲面、Vanna/Charm 和触发价位合成每日可复盘的期权 playbook。
+              </p>
+              <ul class="tag-list" aria-label="option-gex tags">
+                <li>GEX</li>
+                <li>Regime</li>
+                <li>Postmortem</li>
+              </ul>
+              <a class="text-link" href="https://github.com/farfromexact/option-gex" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card accent-blue">
+            <a class="project-media" href="https://github.com/farfromexact/2026-El-Ni-o-weather-monitor" target="_blank" rel="noreferrer" aria-label="Open weather monitor on GitHub">
+              <img src="assets/projects/weather-map.jpg" alt="Weather monitor map dashboard screenshot">
+            </a>
+            <div class="project-body">
+              <div class="project-kicker">Commodity Weather</div>
+              <h3>白糖 / 棕榈油天气监控</h3>
+              <p>
+                跟踪主产区天气、ENSO 背景、价格趋势确认和仓位风险预算，只在天气主题与价格确认同时出现时进入试仓讨论。
+              </p>
+              <ul class="tag-list" aria-label="weather monitor tags">
+                <li>Open-Meteo</li>
+                <li>Price gate</li>
+                <li>Risk budget</li>
+              </ul>
+              <a class="text-link" href="https://github.com/farfromexact/2026-El-Ni-o-weather-monitor" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section map-section" id="map" aria-labelledby="map-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Workflow Map</p>
+            <h2 id="map-title">The pattern behind the projects.</h2>
+          </div>
+          <p>
+            主题不同，但方法很统一：先固化数据，再压成可解释指标，最后把决策边界放到页面上。
+          </p>
+        </div>
+        <div class="workflow" aria-label="Workflow pattern">
+          <div class="workflow-step">
+            <span>01</span>
+            <h3>Snapshot</h3>
+            <p>Excel 底稿、本地行情、期权链、天气数据先落地，避免页面直接依赖脆弱实时源。</p>
+          </div>
+          <div class="workflow-step">
+            <span>02</span>
+            <h3>Normalize</h3>
+            <p>统一字段、口径、分类和资产映射，把可解释性放在模型输出之前。</p>
+          </div>
+          <div class="workflow-step">
+            <span>03</span>
+            <h3>Engine</h3>
+            <p>规则引擎处理阈值、风险闸门、库存约束、无偷看日期和情景假设。</p>
+          </div>
+          <div class="workflow-step">
+            <span>04</span>
+            <h3>Review</h3>
+            <p>看板输出信号、证据、阻断理由、回测诊断和复盘记录，而不是只给一个答案。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section catalog-section" id="catalog" aria-labelledby="catalog-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Project Catalog</p>
+            <h2 id="catalog-title">All public software projects.</h2>
+          </div>
+          <div class="filter-bar" role="group" aria-label="Filter projects">
+            <button class="filter-button is-active" type="button" data-filter="all">All</button>
+            <button class="filter-button" type="button" data-filter="portfolio">Portfolio</button>
+            <button class="filter-button" type="button" data-filter="market">Market</button>
+            <button class="filter-button" type="button" data-filter="options">Options</button>
+            <button class="filter-button" type="button" data-filter="risk">Risk</button>
+            <button class="filter-button" type="button" data-filter="side">Side</button>
+          </div>
+        </div>
+
+        <div class="catalog-grid">
+          <article class="catalog-item" data-category="portfolio">
+            <span>Portfolio</span>
+            <h3>stats</h3>
+            <p>组合管理月度复盘、账户拆解、资产证据和数据质量检查。</p>
+            <a href="https://github.com/farfromexact/stats" target="_blank" rel="noreferrer">Open</a>
+          </article>
+          <article class="catalog-item" data-category="risk">
+            <span>Risk</span>
+            <h3>Solvency</h3>
+            <p>保险资金资产配置变化对最低资本和充足率的敏感性测算。</p>
+            <a href="https://github.com/farfromexact/Solvency" target="_blank" rel="noreferrer">Open</a>
+          </article>
+          <article class="catalog-item" data-category="market">
+            <span>Market</span>
+            <h3>Daily-Bias-Engine</h3>
+            <p>A 股盘前市场风向、趋势日概率、风险硬标记和回测诊断。</p>
+            <a href="https://github.com/farfromexact/Daily-Bias-Engine" target="_blank" rel="noreferrer">Open</a>
+          </article>
+          <article class="catalog-item" data-category="market">
+            <span>Trading</span>
+            <h3>Cost-Basis-Engine</h3>
+            <p>单股票盘中降本研究、库存约束、费用滑点和执行复盘。</p>
+            <a href="https://github.com/farfromexact/Cost-Basis-Engine" target="_blank" rel="noreferrer">Open</a>
+          </article>
+          <article class="catalog-item" data-category="options">
+            <span>Options</span>
+            <h3>option-gex</h3>
+            <p>A 股指数期权 GEX、gamma flip、regime 和 playbook 引擎。</p>
+            <a href="https://github.com/farfromexact/option-gex" target="_blank" rel="noreferrer">Open</a>
+          </article>
+          <article class="catalog-item" data-category="market">
+            <span>Commodities</span>
+            <h3>2026-El-Ni-o-weather-monitor</h3>
+            <p>白糖和棕榈油天气主题、价格确认和风险预算监控面板。</p>
+            <a href="https://github.com/farfromexact/2026-El-Ni-o-weather-monitor" target="_blank" rel="noreferrer">Open</a>
+          </article>
+          <article class="catalog-item" data-category="options">
+            <span>Options</span>
+            <h3>VolLab</h3>
+            <p>中国股指期权 long-gamma、事件分类、DTE 和退出规则研究实验室。</p>
+            <a href="https://github.com/farfromexact/VolLab" target="_blank" rel="noreferrer">Open</a>
+          </article>
+          <article class="catalog-item" data-category="options">
+            <span>Desktop</span>
+            <h3>option_monitor</h3>
+            <p>基于 PySide6 和 pyqtgraph 的股指期货 / 指数期权监控 MVP。</p>
+            <a href="https://github.com/farfromexact/option_monitor" target="_blank" rel="noreferrer">Open</a>
+          </article>
+          <article class="catalog-item" data-category="market">
+            <span>Rotation</span>
+            <h3>quant_wind</h3>
+            <p>WindPy 行业 ETF 轮动研究看板，覆盖取数、回测和结果浏览。</p>
+            <a href="https://github.com/farfromexact/quant_wind" target="_blank" rel="noreferrer">Open</a>
+          </article>
+          <article class="catalog-item" data-category="portfolio">
+            <span>Memo</span>
+            <h3>LBO-model</h3>
+            <p>从标准 Excel 模板生成 LBO / investment memo、回报桥和敏感性表。</p>
+            <a href="https://github.com/farfromexact/LBO-model" target="_blank" rel="noreferrer">Open</a>
+          </article>
+          <article class="catalog-item" data-category="side">
+            <span>Side Tool</span>
+            <h3>Majsoul Helper</h3>
+            <p>网页雀魂辅助脚本，聚焦可见状态捕捉、调试检查和手牌分析。</p>
+            <a href="https://github.com/farfromexact/Majsoul" target="_blank" rel="noreferrer">Open</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section principles-section" aria-labelledby="principles-title">
+        <div class="section-label">Principles</div>
+        <div class="principles">
+          <h2 id="principles-title">Clear boundaries make better tools.</h2>
+          <ul>
+            <li>Local-first snapshots before dashboard rendering.</li>
+            <li>Explicit fees, risk limits, inventory rules and data dates.</li>
+            <li>Signals explain drivers and blockers before suggesting action.</li>
+            <li>Research tools do not place orders or hide assumptions.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Far From Exact</p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
