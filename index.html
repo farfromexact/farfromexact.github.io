@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Far From Exact | Software Systems</title>
+    <title>Far From Exact | Decision Engines</title>
     <meta
       name="description"
-      content="Local-first financial research systems for portfolio review, solvency analysis, market regime, options playbooks, and disciplined trading workflows."
+      content="Decision engines for markets that refuse to be precise. Local-first, explainable, replayable, auditable research systems for market judgment and trading discipline."
     >
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
@@ -20,8 +20,9 @@
         <span>Far From Exact</span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#method">Method</a>
+        <a href="#axes">Axes</a>
         <a href="#systems">Systems</a>
-        <a href="#map">Map</a>
         <a href="#catalog">Catalog</a>
         <a href="https://github.com/farfromexact" target="_blank" rel="noreferrer">GitHub</a>
       </nav>
@@ -35,129 +36,159 @@
           <img src="assets/projects/weather-map.jpg" alt="">
         </div>
         <div class="hero-inner">
-          <p class="eyebrow">Local-first financial software lab</p>
-          <h1 id="hero-title">Research systems for imperfect data.</h1>
+          <p class="eyebrow">Far From Exact</p>
+          <h1 id="hero-title">Decision engines for markets that refuse to be precise.</h1>
           <p class="hero-copy">
-            面向组合复盘、偿付能力、市场风向、期权结构和交易纪律的本地化工具集。
-            每个系统都强调可解释、可回放、可审计，不自动下单，不隐藏假设。
+            面向市场风向、期权结构、偿付能力、组合复盘和交易纪律的本地化研究系统。
+            它们不替我下单，而是固定数据口径、暴露假设、记录判断，并在事后复盘。
           </p>
           <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary" href="#systems">View systems</a>
-            <a class="button quiet" href="https://github.com/farfromexact" target="_blank" rel="noreferrer">Open GitHub</a>
+            <a class="button primary" href="#axes">Open systems map</a>
+            <a class="button quiet" href="#method">Read method</a>
           </div>
         </div>
-        <div class="hero-strip" aria-label="Project summary">
+        <div class="hero-strip" aria-label="Operating summary">
           <div>
-            <span class="metric">11</span>
-            <span class="metric-label">public projects</span>
+            <span class="metric">Local-first</span>
+            <span class="metric-label">snapshots before opinions</span>
           </div>
           <div>
-            <span class="metric">Python</span>
-            <span class="metric-label">Streamlit / PySide6 / pandas</span>
+            <span class="metric">Explainable</span>
+            <span class="metric-label">assumptions, evidence, blockers</span>
           </div>
           <div>
             <span class="metric">No auto-trading</span>
-            <span class="metric-label">decision support, research, review</span>
+            <span class="metric-label">decision support, not prediction</span>
           </div>
         </div>
       </section>
 
-      <section class="section intro-section" aria-labelledby="intro-title">
-        <div class="section-label">Positioning</div>
-        <div class="intro-grid">
-          <h2 id="intro-title">把金融判断做成可以每天打开、检查、复盘的软件。</h2>
+      <section class="section method-section" id="method" aria-labelledby="method-title">
+        <div class="section-label">Operating Method</div>
+        <div class="method-grid">
+          <div class="method-statement">
+            <h2 id="method-title">给不精确的市场，做可复盘的判断系统。</h2>
+            <p>
+              I do not believe a single model can predict the market. I care more about fixing the data cut,
+              exposing assumptions, recording decisions, and reviewing them later.
+            </p>
+            <p>
+              我不相信一个万能模型能预测市场。我更相信：固定数据口径、暴露假设、记录判断、事后复盘。
+              这些系统服务于投资中最脆弱的部分：模型开始失效，而人开始情绪化的时候。
+            </p>
+          </div>
+          <div class="method-console" aria-label="Operating loop">
+            <div class="workflow-step">
+              <span>01</span>
+              <h3>Snapshot</h3>
+              <p>先保存 Excel 底稿、本地行情、期权链和外部数据，避免判断被实时噪音牵着走。</p>
+            </div>
+            <div class="workflow-step">
+              <span>02</span>
+              <h3>Normalize</h3>
+              <p>统一字段、口径、分类和资产映射，让后续观点能追溯到同一套证据。</p>
+            </div>
+            <div class="workflow-step">
+              <span>03</span>
+              <h3>Engine</h3>
+              <p>用规则引擎处理阈值、风险闸门、库存约束、无偷看日期和情景假设。</p>
+            </div>
+            <div class="workflow-step">
+              <span>04</span>
+              <h3>Review</h3>
+              <p>记录信号、阻断理由、操作结果和复盘备注，让信心来自审计，而不是感觉。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section axes-section" id="axes" aria-labelledby="axes-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Systems Map</p>
+            <h2 id="axes-title">Three axes, one operating system.</h2>
+          </div>
           <p>
-            这些项目不是为了证明一个模型永远正确，而是把数据口径、风险约束、规则引擎和人工判断放进同一个界面。
-            它们更像研究台、复盘台和纪律台：先固定数据，再输出判断，再留下证据。
+            首页不按项目数量展开，而按判断场景组织：市场状态、资本风险、盘中纪律。
           </p>
+        </div>
+
+        <div class="axis-grid">
+          <article class="axis-card accent-blue">
+            <div class="axis-number">A</div>
+            <h3>Market Regime</h3>
+            <p>识别市场状态、波动结构和风险开关。它回答的是：今天更像趋势、震荡、钉住、挤压，还是事件风险。</p>
+            <ul class="axis-links" aria-label="Market Regime projects">
+              <li><a href="https://github.com/farfromexact/Daily-Bias-Engine" target="_blank" rel="noreferrer">Daily Bias Engine</a></li>
+              <li><a href="https://github.com/farfromexact/option-gex" target="_blank" rel="noreferrer">A-Share Options Playbook / option-gex</a></li>
+              <li><a href="https://github.com/farfromexact/VolLab" target="_blank" rel="noreferrer">VolLab</a></li>
+            </ul>
+          </article>
+
+          <article class="axis-card accent-red">
+            <div class="axis-number">B</div>
+            <h3>Risk &amp; Capital</h3>
+            <p>把资产配置、偿付能力、组合证据和投资备忘录做成可审计工作台。它回答的是：风险从哪里来，证据在哪里。</p>
+            <ul class="axis-links" aria-label="Risk and Capital projects">
+              <li><a href="https://github.com/farfromexact/Solvency" target="_blank" rel="noreferrer">Solvency</a></li>
+              <li><a href="https://github.com/farfromexact/stats" target="_blank" rel="noreferrer">组合管理账户复盘</a></li>
+              <li><a href="https://github.com/farfromexact/LBO-model" target="_blank" rel="noreferrer">LBO-model</a></li>
+            </ul>
+          </article>
+
+          <article class="axis-card accent-yellow">
+            <div class="axis-number">C</div>
+            <h3>Trading Discipline</h3>
+            <p>用工具约束盘中行为，避免把研究结论滑向情绪交易。它回答的是：条件是否真的满足，还是我只是想动手。</p>
+            <ul class="axis-links" aria-label="Trading Discipline projects">
+              <li><a href="https://github.com/farfromexact/Cost-Basis-Engine" target="_blank" rel="noreferrer">Cost Basis Engine</a></li>
+              <li><a href="https://github.com/farfromexact/option_monitor" target="_blank" rel="noreferrer">option_monitor</a></li>
+              <li><a href="https://github.com/farfromexact/2026-El-Ni-o-weather-monitor" target="_blank" rel="noreferrer">weather monitor</a></li>
+            </ul>
+          </article>
         </div>
       </section>
 
       <section class="section systems-section" id="systems" aria-labelledby="systems-title">
         <div class="section-heading">
           <div>
-            <p class="section-label">Featured Systems</p>
-            <h2 id="systems-title">Six tools with a clear operating surface.</h2>
+            <p class="section-label">Selected Decision Engines</p>
+            <h2 id="systems-title">Research records, not product pitches.</h2>
           </div>
           <p>
-            每个主项目都有明确输入、规则、输出和展示界面。这里优先展示已经有截图、README 和可复盘工作流的系统。
+            每个系统都被设计成一个判断场景：它解决什么问题，什么时候打开，以及它明确拒绝做什么。
           </p>
         </div>
 
         <div class="feature-grid">
-          <article class="project-card large accent-red">
-            <a class="project-media tall" href="https://github.com/farfromexact/stats" target="_blank" rel="noreferrer" aria-label="Open stats on GitHub">
-              <img src="assets/projects/stats-overview.jpg" alt="Portfolio review dashboard overview screenshot">
-            </a>
-            <div class="project-body">
-              <div class="project-kicker">Portfolio Review</div>
-              <h3>组合管理账户复盘</h3>
-              <p>
-                从月度组合宽表出发，把账户、品种、经理、委内/委外盘子和资产级证据串在同一个 Streamlit 看板里。
-              </p>
-              <ul class="tag-list" aria-label="stats tags">
-                <li>Excel to dashboard</li>
-                <li>Drill-down</li>
-                <li>Data quality</li>
-              </ul>
-              <a class="text-link" href="https://github.com/farfromexact/stats" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </article>
-
           <article class="project-card accent-blue">
-            <a class="project-media" href="https://github.com/farfromexact/Solvency" target="_blank" rel="noreferrer" aria-label="Open Solvency on GitHub">
-              <img src="assets/projects/solvency-scenario.svg" alt="Solvency scenario workbench screenshot">
-            </a>
-            <div class="project-body">
-              <div class="project-kicker">Risk Capital</div>
-              <h3>偿付能力资产配置情景测算</h3>
-              <p>
-                读取月度偿付能力底稿，快速比较历史趋势、构建资产调整情景，并解释实际资本、最低资本和充足率变化。
-              </p>
-              <ul class="tag-list" aria-label="Solvency tags">
-                <li>Insurance ALM</li>
-                <li>Scenario</li>
-                <li>Waterfall</li>
-              </ul>
-              <a class="text-link" href="https://github.com/farfromexact/Solvency" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </article>
-
-          <article class="project-card accent-yellow">
             <a class="project-media" href="https://github.com/farfromexact/Daily-Bias-Engine" target="_blank" rel="noreferrer" aria-label="Open Daily Bias Engine on GitHub">
               <img src="assets/projects/daily-bias-overview.jpg" alt="Daily Bias Engine dashboard screenshot">
             </a>
             <div class="project-body">
               <div class="project-kicker">Market Regime</div>
               <h3>Daily Bias Engine</h3>
-              <p>
-                把 iFinD 快照、利率、ETF、期货、海外市场和期权链整理成可审计因子，输出盘前 Risk-On / Neutral / Risk-Off。
-              </p>
+              <p>盘前市场风向系统，把资金、利率、海外风险和期权结构压成可审计的状态判断。</p>
+              <dl class="decision-list">
+                <div>
+                  <dt>Problem</dt>
+                  <dd>A 股开盘前，市场到底是由资金、利率、海外风险还是期权结构主导。</dd>
+                </div>
+                <div>
+                  <dt>Used when</dt>
+                  <dd>每天盘前复盘，并决定今天更适合顺势、观察，还是降低交易频率。</dd>
+                </div>
+                <div>
+                  <dt>Refuses to do</dt>
+                  <dd>不给万能分数，不用未来数据，不自动生成交易指令。</dd>
+                </div>
+              </dl>
               <ul class="tag-list" aria-label="Daily Bias Engine tags">
                 <li>Snapshot-first</li>
                 <li>No lookahead</li>
                 <li>Backtest</li>
               </ul>
               <a class="text-link" href="https://github.com/farfromexact/Daily-Bias-Engine" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </article>
-
-          <article class="project-card accent-rose">
-            <a class="project-media" href="https://github.com/farfromexact/Cost-Basis-Engine" target="_blank" rel="noreferrer" aria-label="Open Cost Basis Engine on GitHub">
-              <img src="assets/projects/cost-basis-intraday.jpg" alt="Cost Basis Engine intraday dashboard screenshot">
-            </a>
-            <div class="project-body">
-              <div class="project-kicker">Trading Discipline</div>
-              <h3>Cost Basis Engine</h3>
-              <p>
-                单股票盘中持仓降本研究台：在目标持仓、费用、滑点和可卖数量约束下，判断闭环做 T 是否优于不操作。
-              </p>
-              <ul class="tag-list" aria-label="Cost Basis Engine tags">
-                <li>Inventory-aware</li>
-                <li>Trade intent</li>
-                <li>Audit loop</li>
-              </ul>
-              <a class="text-link" href="https://github.com/farfromexact/Cost-Basis-Engine" target="_blank" rel="noreferrer">GitHub</a>
             </div>
           </article>
 
@@ -168,9 +199,21 @@
             <div class="project-body">
               <div class="project-kicker">Options Structure</div>
               <h3>A-Share Options Playbook</h3>
-              <p>
-                把 GEX、gamma flip、wall strength、波动率曲面、Vanna/Charm 和触发价位合成每日可复盘的期权 playbook。
-              </p>
+              <p>把期权链结构变成每日可复盘的市场状态、触发价位和风险提示。</p>
+              <dl class="decision-list">
+                <div>
+                  <dt>Problem</dt>
+                  <dd>把 GEX、gamma flip、wall、IV/RV、Vanna/Charm 变成每日可复盘的结构判断。</dd>
+                </div>
+                <div>
+                  <dt>Used when</dt>
+                  <dd>判断市场是更接近趋势突破、钉住、挤压，还是事件风险。</dd>
+                </div>
+                <div>
+                  <dt>Refuses to do</dt>
+                  <dd>不把复杂 Greeks 包装成确定性预测。</dd>
+                </div>
+              </dl>
               <ul class="tag-list" aria-label="option-gex tags">
                 <li>GEX</li>
                 <li>Regime</li>
@@ -180,67 +223,79 @@
             </div>
           </article>
 
-          <article class="project-card accent-blue">
-            <a class="project-media" href="https://github.com/farfromexact/2026-El-Ni-o-weather-monitor" target="_blank" rel="noreferrer" aria-label="Open weather monitor on GitHub">
-              <img src="assets/projects/weather-map.jpg" alt="Weather monitor map dashboard screenshot">
+          <article class="project-card accent-rose">
+            <a class="project-media" href="https://github.com/farfromexact/Solvency" target="_blank" rel="noreferrer" aria-label="Open Solvency on GitHub">
+              <img src="assets/projects/solvency-scenario.svg" alt="Solvency scenario workbench screenshot">
             </a>
             <div class="project-body">
-              <div class="project-kicker">Commodity Weather</div>
-              <h3>白糖 / 棕榈油天气监控</h3>
-              <p>
-                跟踪主产区天气、ENSO 背景、价格趋势确认和仓位风险预算，只在天气主题与价格确认同时出现时进入试仓讨论。
-              </p>
-              <ul class="tag-list" aria-label="weather monitor tags">
-                <li>Open-Meteo</li>
-                <li>Price gate</li>
-                <li>Risk budget</li>
+              <div class="project-kicker">Risk Capital</div>
+              <h3>Solvency</h3>
+              <p>保险资金资产配置和偿付能力敏感性工作台，用来解释资本、最低资本和充足率变化。</p>
+              <dl class="decision-list">
+                <div>
+                  <dt>Problem</dt>
+                  <dd>快速理解资产配置变化对最低资本、实际资本和充足率的影响。</dd>
+                </div>
+                <div>
+                  <dt>Used when</dt>
+                  <dd>做保险资金配置调整、压力测试或投委会前置讨论。</dd>
+                </div>
+                <div>
+                  <dt>Refuses to do</dt>
+                  <dd>不隐藏资本因子、资产口径和情景假设。</dd>
+                </div>
+              </dl>
+              <ul class="tag-list" aria-label="Solvency tags">
+                <li>Capital factors</li>
+                <li>Scenario</li>
+                <li>Audit trail</li>
               </ul>
-              <a class="text-link" href="https://github.com/farfromexact/2026-El-Ni-o-weather-monitor" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="text-link" href="https://github.com/farfromexact/Solvency" target="_blank" rel="noreferrer">GitHub</a>
             </div>
           </article>
-        </div>
-      </section>
 
-      <section class="section map-section" id="map" aria-labelledby="map-title">
-        <div class="section-heading">
-          <div>
-            <p class="section-label">Workflow Map</p>
-            <h2 id="map-title">The pattern behind the projects.</h2>
-          </div>
-          <p>
-            主题不同，但方法很统一：先固化数据，再压成可解释指标，最后把决策边界放到页面上。
-          </p>
-        </div>
-        <div class="workflow" aria-label="Workflow pattern">
-          <div class="workflow-step">
-            <span>01</span>
-            <h3>Snapshot</h3>
-            <p>Excel 底稿、本地行情、期权链、天气数据先落地，避免页面直接依赖脆弱实时源。</p>
-          </div>
-          <div class="workflow-step">
-            <span>02</span>
-            <h3>Normalize</h3>
-            <p>统一字段、口径、分类和资产映射，把可解释性放在模型输出之前。</p>
-          </div>
-          <div class="workflow-step">
-            <span>03</span>
-            <h3>Engine</h3>
-            <p>规则引擎处理阈值、风险闸门、库存约束、无偷看日期和情景假设。</p>
-          </div>
-          <div class="workflow-step">
-            <span>04</span>
-            <h3>Review</h3>
-            <p>看板输出信号、证据、阻断理由、回测诊断和复盘记录，而不是只给一个答案。</p>
-          </div>
+          <article class="project-card accent-yellow">
+            <a class="project-media" href="https://github.com/farfromexact/Cost-Basis-Engine" target="_blank" rel="noreferrer" aria-label="Open Cost Basis Engine on GitHub">
+              <img src="assets/projects/cost-basis-intraday.jpg" alt="Cost Basis Engine intraday dashboard screenshot">
+            </a>
+            <div class="project-body">
+              <div class="project-kicker">Trading Discipline</div>
+              <h3>Cost Basis Engine</h3>
+              <p>单股票盘中持仓降本研究台，用费用、滑点、库存和证据约束一次操作是否值得做。</p>
+              <dl class="decision-list">
+                <div>
+                  <dt>Problem</dt>
+                  <dd>防止我把“做 T 降成本”误用成盘中情绪交易。</dd>
+                </div>
+                <div>
+                  <dt>Used when</dt>
+                  <dd>我长期持有一只股票，但想判断一次盘中操作是否真的改善成本。</dd>
+                </div>
+                <div>
+                  <dt>Refuses to do</dt>
+                  <dd>当费用、滑点、库存约束或证据不足时，不建议行动。</dd>
+                </div>
+              </dl>
+              <ul class="tag-list" aria-label="Cost Basis Engine tags">
+                <li>Inventory-aware</li>
+                <li>Trade intent</li>
+                <li>Audit loop</li>
+              </ul>
+              <a class="text-link" href="https://github.com/farfromexact/Cost-Basis-Engine" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
         </div>
       </section>
 
       <section class="section catalog-section" id="catalog" aria-labelledby="catalog-title">
         <div class="section-heading">
           <div>
-            <p class="section-label">Project Catalog</p>
-            <h2 id="catalog-title">All public software projects.</h2>
+            <p class="section-label">Public Repo Index</p>
+            <h2 id="catalog-title">Everything else stays findable.</h2>
           </div>
+          <p>
+            Catalog 只是索引，不是首页叙事的中心。完整链接保留在这里，方便从一个入口进入所有 public repos。
+          </p>
           <div class="filter-bar" role="group" aria-label="Filter projects">
             <button class="filter-button is-active" type="button" data-filter="all">All</button>
             <button class="filter-button" type="button" data-filter="portfolio">Portfolio</button>
@@ -324,12 +379,13 @@
       <section class="section principles-section" aria-labelledby="principles-title">
         <div class="section-label">Principles</div>
         <div class="principles">
-          <h2 id="principles-title">Clear boundaries make better tools.</h2>
+          <h2 id="principles-title">Personal rules for fragile markets.</h2>
           <ul>
-            <li>Local-first snapshots before dashboard rendering.</li>
-            <li>Explicit fees, risk limits, inventory rules and data dates.</li>
-            <li>Signals explain drivers and blockers before suggesting action.</li>
-            <li>Research tools do not place orders or hide assumptions.</li>
+            <li>Snapshot before opinion. 先固定数据，再形成观点。</li>
+            <li>Assumptions before signals. 先暴露假设，再输出信号。</li>
+            <li>Constraints before trades. 先检查约束，再谈交易。</li>
+            <li>Review before confidence. 先复盘，再提高信心。</li>
+            <li>No auto-trading. No hidden assumptions.</li>
           </ul>
         </div>
       </section>
