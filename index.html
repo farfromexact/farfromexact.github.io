@@ -8,6 +8,7 @@
       name="description"
       content="Decision engines for markets that refuse to be precise. Local-first, explainable, replayable, auditable research systems for market judgment and trading discipline."
     >
+    <meta name="theme-color" content="#f5f5f7">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -30,35 +31,49 @@
 
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
-        <div class="hero-backdrop" aria-hidden="true">
-          <img src="assets/projects/stats-overview.jpg" alt="">
-          <img src="assets/projects/daily-bias-overview.jpg" alt="">
-          <img src="assets/projects/weather-map.jpg" alt="">
-        </div>
+        <canvas class="system-field" id="system-field" aria-hidden="true"></canvas>
+        <p class="sr-only">
+          Four animated data streams represent market regime, options and volatility, risk and capital,
+          and research workflow. They converge into one reviewable decision loop.
+        </p>
         <div class="hero-inner">
-          <p class="eyebrow">Far From Exact</p>
-          <h1 id="hero-title">Decision engines for markets that refuse to be precise.</h1>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Far From Exact / Decision Systems</p>
+          <h1 id="hero-title">Decision engines<br><span>for uncertain markets.</span></h1>
           <p class="hero-copy">
-            面向市场风向、期权结构、偿付能力、组合复盘和交易纪律的本地化研究系统。
-            它们不替我下单，而是固定数据口径、暴露假设、记录判断，并在事后复盘。
+            把市场状态、期权结构、资本风险与研究证据放进同一个可解释、可回放、可审计的判断循环。
+            不替人预测，也不替人下单。
           </p>
           <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary" href="#axes">Open systems map</a>
-            <a class="button quiet" href="#method">Read method</a>
+            <a class="button primary" href="#axes">Explore systems <span aria-hidden="true">&#8595;</span></a>
+            <a class="button quiet" href="https://github.com/farfromexact" target="_blank" rel="noreferrer">View GitHub <span aria-hidden="true">&#8599;</span></a>
           </div>
+          <ul class="signal-legend" aria-label="Animated system tracks">
+            <li style="--signal: #0071e3">Market regime</li>
+            <li style="--signal: #00a68a">Options &amp; volatility</li>
+            <li style="--signal: #d05a2a">Risk &amp; capital</li>
+            <li style="--signal: #a44c86">Research workflow</li>
+          </ul>
         </div>
-        <div class="hero-strip" aria-label="Operating summary">
+        <div class="hero-strip" aria-label="Repository and operating summary">
           <div>
-            <span class="metric">Local-first</span>
-            <span class="metric-label">snapshots before opinions</span>
+            <span class="metric-index">13</span>
+            <span class="metric">Public builds</span>
+            <span class="metric-label">curated systems and experiments</span>
           </div>
           <div>
-            <span class="metric">Explainable</span>
-            <span class="metric-label">assumptions, evidence, blockers</span>
+            <span class="metric-index">04</span>
+            <span class="metric">Decision tracks</span>
+            <span class="metric-label">from signal to research record</span>
           </div>
           <div>
-            <span class="metric">No auto-trading</span>
-            <span class="metric-label">decision support, not prediction</span>
+            <span class="metric-index">01</span>
+            <span class="metric">Audit loop</span>
+            <span class="metric-label">snapshot, normalize, engine, review</span>
+          </div>
+          <div>
+            <span class="metric-index">00</span>
+            <span class="metric">Auto trades</span>
+            <span class="metric-label">judgment remains human</span>
           </div>
         </div>
       </section>
@@ -106,10 +121,10 @@
         <div class="section-heading">
           <div>
             <p class="section-label">Systems Map</p>
-            <h2 id="axes-title">Three axes, one operating system.</h2>
+            <h2 id="axes-title">Four signals. One way of thinking.</h2>
           </div>
           <p>
-            首页不按项目数量展开，而按判断场景组织：市场状态、资本风险、盘中纪律。
+            首页不按仓库数量堆叠，而按判断场景组织。动画里的四条信号轨道，对应下面四组真实项目。
           </p>
         </div>
 
@@ -117,34 +132,45 @@
           <article class="axis-card accent-blue">
             <div class="axis-number">A</div>
             <h3>Market Regime</h3>
-            <p>识别市场状态、波动结构和风险开关。它回答的是：今天更像趋势、震荡、钉住、挤压，还是事件风险。</p>
+            <p>识别趋势、轮动、天气事件和风险开关。它回答：今天的市场究竟由什么主导。</p>
             <ul class="axis-links" aria-label="Market Regime projects">
               <li><a href="https://github.com/farfromexact/Daily-Bias-Engine" target="_blank" rel="noreferrer">Daily Bias Engine</a></li>
-              <li><a href="https://github.com/farfromexact/option-gex" target="_blank" rel="noreferrer">A-Share Options Playbook / option-gex</a></li>
-              <li><a href="https://github.com/farfromexact/VolLab" target="_blank" rel="noreferrer">VolLab</a></li>
+              <li><a href="https://github.com/farfromexact/quant_wind" target="_blank" rel="noreferrer">quant_wind</a></li>
+              <li><a href="https://github.com/farfromexact/2026-El-Ni-o-weather-monitor" target="_blank" rel="noreferrer">El Nino Weather Monitor</a></li>
             </ul>
           </article>
 
-          <article class="axis-card accent-red">
+          <article class="axis-card accent-teal">
             <div class="axis-number">B</div>
+            <h3>Options &amp; Volatility</h3>
+            <p>把 Greeks、波动率、持仓结构和事件样本变成可复盘实验，而不是确定性预言。</p>
+            <ul class="axis-links" aria-label="Options and Volatility projects">
+              <li><a href="https://github.com/farfromexact/option-gex" target="_blank" rel="noreferrer">A-Share Options Playbook</a></li>
+              <li><a href="https://github.com/farfromexact/VolLab" target="_blank" rel="noreferrer">VolLab</a></li>
+              <li><a href="https://github.com/farfromexact/option_monitor" target="_blank" rel="noreferrer">option_monitor</a></li>
+              <li><a href="https://github.com/farfromexact/option-greek-game" target="_blank" rel="noreferrer">Volatility Forge</a></li>
+            </ul>
+          </article>
+
+          <article class="axis-card accent-orange">
+            <div class="axis-number">C</div>
             <h3>Risk &amp; Capital</h3>
-            <p>把资产配置、偿付能力、组合证据和投资备忘录做成可审计工作台。它回答的是：风险从哪里来，证据在哪里。</p>
+            <p>把资产配置、偿付能力、组合证据和交易成本放在同一套约束下，解释风险从哪里来。</p>
             <ul class="axis-links" aria-label="Risk and Capital projects">
               <li><a href="https://github.com/farfromexact/Solvency" target="_blank" rel="noreferrer">Solvency</a></li>
-              <li><a href="https://github.com/farfromexact/stats" target="_blank" rel="noreferrer">组合管理账户复盘</a></li>
-              <li><a href="https://github.com/farfromexact/LBO-model" target="_blank" rel="noreferrer">LBO-model</a></li>
+              <li><a href="https://github.com/farfromexact/stats" target="_blank" rel="noreferrer">Portfolio Review</a></li>
+              <li><a href="https://github.com/farfromexact/Cost-Basis-Engine" target="_blank" rel="noreferrer">Cost Basis Engine</a></li>
             </ul>
           </article>
 
-          <article class="axis-card accent-yellow">
-            <div class="axis-number">C</div>
-            <h3>Trading Discipline</h3>
-            <p>用工具约束盘中行为，避免把研究结论滑向情绪交易。它回答的是：条件是否真的满足，还是我只是想动手。</p>
-            <ul class="axis-links" aria-label="Trading Discipline projects">
-              <li><a href="https://github.com/farfromexact/Cost-Basis-Engine" target="_blank" rel="noreferrer">Cost Basis Engine</a></li>
-              <li><a href="https://github.com/farfromexact/option_monitor" target="_blank" rel="noreferrer">option_monitor</a></li>
-              <li><a href="https://github.com/farfromexact/option-greek-game" target="_blank" rel="noreferrer">Volatility Forge / option-greek-game</a></li>
-              <li><a href="https://github.com/farfromexact/2026-El-Ni-o-weather-monitor" target="_blank" rel="noreferrer">weather monitor</a></li>
+          <article class="axis-card accent-plum">
+            <div class="axis-number">D</div>
+            <h3>Research Workflow</h3>
+            <p>把证据、假设、模型输出和反例沉淀成工作底稿，让研究过程本身可以被检查。</p>
+            <ul class="axis-links" aria-label="Research Workflow projects">
+              <li><a href="https://github.com/farfromexact/Fundamental-Research-Working-Paper-System" target="_blank" rel="noreferrer">Fundamental Research Papers</a></li>
+              <li><a href="https://github.com/farfromexact/LBO-model" target="_blank" rel="noreferrer">LBO-model</a></li>
+              <li><a href="https://github.com/farfromexact/Majsoul" target="_blank" rel="noreferrer">Majsoul Helper</a></li>
             </ul>
           </article>
         </div>
@@ -303,6 +329,7 @@
             <button class="filter-button" type="button" data-filter="market">Market</button>
             <button class="filter-button" type="button" data-filter="options">Options</button>
             <button class="filter-button" type="button" data-filter="risk">Risk</button>
+            <button class="filter-button" type="button" data-filter="research">Research</button>
             <button class="filter-button" type="button" data-filter="side">Side</button>
           </div>
         </div>
@@ -374,6 +401,12 @@
             <p>从标准 Excel 模板生成 LBO / investment memo、回报桥和敏感性表。</p>
             <a href="https://github.com/farfromexact/LBO-model" target="_blank" rel="noreferrer">Open</a>
           </article>
+          <article class="catalog-item" data-category="research">
+            <span>Research</span>
+            <h3>Fundamental Research Working Paper System</h3>
+            <p>把基本面研究证据、核心论点、反例与工作底稿组织成可追踪的研究记录。</p>
+            <a href="https://github.com/farfromexact/Fundamental-Research-Working-Paper-System" target="_blank" rel="noreferrer">Open</a>
+          </article>
           <article class="catalog-item" data-category="side">
             <span>Side Tool</span>
             <h3>Majsoul Helper</h3>
@@ -403,7 +436,7 @@
       <div class="visitor-counter" aria-label="Site visit count">
         <span>Visits</span>
         <img
-          src="https://hits.sh/farfromexact.github.io.svg?label=&color=27123d&labelColor=f3eed9"
+          src="https://hits.sh/farfromexact.github.io.svg?label=&color=0071e3&labelColor=1d1d1f"
           width="28"
           height="20"
           alt="Site visit count"
