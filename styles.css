@@ -1465,3 +1465,304 @@ button {
     transform: none;
   }
 }
+
+/* Rapture: underwater deco, expressed through architecture and instruments. */
+.theme-rapture {
+  --ink: #102e31;
+  --ink-soft: #526b69;
+  --ink-faint: #71817c;
+  --paper: #e8e1d2;
+  --paper-deep: #d8cfbc;
+  --surface: #f4eddf;
+  --line: rgba(54, 66, 61, 0.2);
+  --line-strong: rgba(57, 69, 62, 0.38);
+  --blue: #227c79;
+  --teal: #378f88;
+  --orange: #a65b3b;
+  --plum: #78536a;
+  --rose: #94574e;
+  --yellow: #a47c34;
+  --brass: #c39a51;
+  --deep: #082b30;
+  --deep-soft: #0d383b;
+  --shadow-small: 0 8px 22px rgba(15, 40, 39, 0.09);
+  --shadow-large: 0 28px 70px rgba(10, 37, 37, 0.16);
+  background: var(--paper);
+}
+
+.theme-rapture .site-header {
+  border-bottom-color: rgba(195, 154, 81, 0.26);
+  color: #f0e7d5;
+  background: #092a2f;
+}
+
+.theme-rapture .site-nav {
+  color: rgba(240, 231, 213, 0.64);
+}
+
+.theme-rapture .site-nav a:hover,
+.theme-rapture .site-nav a:focus-visible,
+.theme-rapture .site-nav a.is-current {
+  color: #f5ead4;
+}
+
+.theme-rapture .site-nav a::after {
+  background: var(--brass);
+}
+
+.theme-rapture .brand-mark {
+  border: 1px solid var(--brass);
+  border-radius: 0;
+  transform: rotate(45deg);
+}
+
+.theme-rapture .brand-mark::before {
+  inset: 3px;
+  border: 1px solid #54aaa1;
+  border-radius: 50%;
+}
+
+.theme-rapture .brand-mark::after {
+  inset: 7px;
+  background: var(--brass);
+  transform: rotate(-45deg);
+}
+
+.theme-rapture .hero {
+  border-bottom-color: rgba(195, 154, 81, 0.36);
+  color: #f2eadb;
+  background: var(--deep);
+}
+
+.theme-rapture .hero::before,
+.theme-rapture .hero::after {
+  position: absolute;
+  z-index: 1;
+  content: "";
+  pointer-events: none;
+}
+
+.theme-rapture .hero::before {
+  inset: 14px;
+  border: 1px solid rgba(195, 154, 81, 0.18);
+}
+
+.theme-rapture .hero::after {
+  top: 14px;
+  left: 50%;
+  width: 140px;
+  height: 7px;
+  border-right: 1px solid rgba(195, 154, 81, 0.34);
+  border-left: 1px solid rgba(195, 154, 81, 0.34);
+  transform: translateX(-50%);
+}
+
+.theme-rapture .hero-inner {
+  width: min(1240px, calc(100% - 76px));
+}
+
+.theme-rapture .hero h1,
+.theme-rapture .method-statement h2,
+.theme-rapture .section-heading h2,
+.theme-rapture .principles h2,
+.theme-rapture .project-body h3,
+.theme-rapture .axis-card h3,
+.theme-rapture .catalog-item h3 {
+  font-family: Didot, "Bodoni MT", "Times New Roman", serif;
+  font-weight: 600;
+}
+
+.theme-rapture .hero h1 {
+  max-width: 730px;
+  color: #f4ebd9;
+  font-size: 78px;
+  line-height: 0.94;
+  text-transform: uppercase;
+}
+
+.theme-rapture .hero h1 span {
+  color: var(--brass);
+}
+
+.theme-rapture .eyebrow {
+  color: rgba(238, 226, 204, 0.68);
+}
+
+.theme-rapture .status-dot {
+  border-radius: 0;
+  background: #58b1a6;
+  box-shadow: 0 0 0 4px rgba(80, 167, 157, 0.14);
+  transform: rotate(45deg);
+}
+
+.theme-rapture .hero-copy {
+  max-width: 600px;
+  color: rgba(240, 231, 213, 0.72);
+}
+
+.theme-rapture .button,
+.theme-rapture .filter-button,
+.theme-rapture .tag-list li {
+  border-radius: 0;
+}
+
+.theme-rapture .button {
+  clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px);
+}
+
+.theme-rapture .button.primary {
+  color: #092b2f;
+  background: var(--brass);
+}
+
+.theme-rapture .button.primary:hover,
+.theme-rapture .button.primary:focus-visible {
+  background: #d6b36f;
+}
+
+.theme-rapture .button.quiet {
+  border-color: rgba(237, 226, 205, 0.34);
+  color: #ede3d0;
+  background: rgba(5, 23, 26, 0.24);
+}
+
+.theme-rapture .signal-legend {
+  color: rgba(237, 226, 205, 0.58);
+}
+
+.theme-rapture .signal-legend li::before {
+  border-radius: 0;
+}
+
+.theme-rapture .hero-strip {
+  z-index: 3;
+  border-top-color: rgba(195, 154, 81, 0.38);
+  color: #eadfc9;
+  background: rgba(5, 27, 30, 0.9);
+  backdrop-filter: blur(16px);
+}
+
+.theme-rapture .hero-strip > div {
+  border-right-color: rgba(195, 154, 81, 0.25);
+}
+
+.theme-rapture .metric-index,
+.theme-rapture .metric-label {
+  color: rgba(227, 211, 181, 0.5);
+}
+
+.theme-rapture .metric {
+  color: #f0e5d1;
+  font-family: Didot, "Bodoni MT", serif;
+}
+
+.theme-rapture .method-section,
+.theme-rapture .systems-section,
+.theme-rapture .principles-section {
+  background: var(--surface);
+}
+
+.theme-rapture .axes-section,
+.theme-rapture .catalog-section {
+  background: var(--paper);
+}
+
+.theme-rapture .section-label,
+.theme-rapture .project-kicker,
+.theme-rapture .catalog-item > span {
+  color: #8c6b31;
+}
+
+.theme-rapture .method-console,
+.theme-rapture .axis-card,
+.theme-rapture .project-card,
+.theme-rapture .catalog-item {
+  border-radius: 2px;
+  border-color: rgba(65, 77, 69, 0.24);
+  box-shadow: none;
+}
+
+.theme-rapture .method-console {
+  border: 1px solid rgba(148, 111, 50, 0.38);
+  background: #e4dac6;
+}
+
+.theme-rapture .workflow-step {
+  border-color: rgba(97, 86, 66, 0.23);
+}
+
+.theme-rapture .workflow-step > span,
+.theme-rapture .axis-number {
+  color: #98733a;
+  font-family: "Times New Roman", serif;
+}
+
+.theme-rapture .axis-card,
+.theme-rapture .catalog-item {
+  background: rgba(245, 238, 224, 0.54);
+}
+
+.theme-rapture .axis-card::before,
+.theme-rapture .project-body::before,
+.theme-rapture .catalog-item::before {
+  border-radius: 0;
+}
+
+.theme-rapture .project-media img {
+  filter: saturate(0.72) sepia(0.12) hue-rotate(118deg);
+}
+
+.theme-rapture .text-link,
+.theme-rapture .axis-links a:hover,
+.theme-rapture .axis-links a:focus-visible {
+  color: #1b7872;
+}
+
+.theme-rapture .filter-button.is-active {
+  color: #f2eadb;
+  background: var(--deep);
+}
+
+.theme-rapture .site-footer {
+  border-top: 1px solid rgba(195, 154, 81, 0.32);
+  color: #f0e6d2;
+  background: #08272b;
+}
+
+@media (max-width: 820px) {
+  .theme-rapture .hero-inner {
+    width: calc(100% - 42px);
+    padding-top: 42px;
+  }
+
+  .theme-rapture .hero h1 {
+    max-width: 570px;
+    font-size: 55px;
+  }
+}
+
+@media (max-width: 560px) {
+  .theme-rapture .hero::before {
+    inset: 8px;
+  }
+
+  .theme-rapture .hero-inner {
+    width: calc(100% - 34px);
+    padding-top: 34px;
+  }
+
+  .theme-rapture .hero h1 {
+    max-width: 370px;
+    font-size: 39px;
+    line-height: 0.96;
+  }
+
+  .theme-rapture .hero-copy {
+    max-width: 350px;
+  }
+
+  .theme-rapture .button {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+}
