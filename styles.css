@@ -1465,3 +1465,249 @@ button {
     transform: none;
   }
 }
+
+/* Dota 2-inspired branch: strategic cartography without game artwork or logos. */
+.theme-dota {
+  --ink: #20251f;
+  --ink-soft: #60665c;
+  --ink-faint: #7e8277;
+  --paper: #e9e4da;
+  --paper-deep: #d9d2c5;
+  --surface: #f8f5ee;
+  --line: rgba(32, 37, 31, 0.15);
+  --line-strong: rgba(32, 37, 31, 0.3);
+  --blue: #2d8b68;
+  --teal: #668c78;
+  --orange: #b44237;
+  --plum: #8d6232;
+  --rose: #93463e;
+  --yellow: #a67b37;
+  background: var(--paper);
+}
+
+.theme-dota .site-header {
+  border-color: rgba(32, 37, 31, 0.13);
+  background: #eee9df;
+}
+
+.theme-dota .brand-mark {
+  width: 17px;
+  height: 17px;
+  border-color: #39473c;
+  border-radius: 2px;
+  transform: rotate(45deg);
+}
+
+.theme-dota .brand-mark::before,
+.theme-dota .brand-mark::after {
+  position: absolute;
+  inset: auto;
+  width: 11px;
+  height: 1px;
+  border: 0;
+  border-radius: 0;
+  content: "";
+  transform: rotate(-45deg);
+}
+
+.theme-dota .brand-mark::before {
+  left: 1px;
+  top: 6px;
+  background: var(--blue);
+}
+
+.theme-dota .brand-mark::after {
+  right: 1px;
+  bottom: 6px;
+  background: var(--orange);
+}
+
+.theme-dota .hero {
+  border-color: rgba(32, 37, 31, 0.2);
+  background: #e6e0d5;
+}
+
+.theme-dota .hero-inner {
+  width: min(1200px, calc(100% - 64px));
+}
+
+.theme-dota .eyebrow,
+.theme-dota .section-label,
+.theme-dota .project-kicker,
+.theme-dota .catalog-item > span {
+  color: #476c58;
+}
+
+.theme-dota .status-dot {
+  border-radius: 1px;
+  background: #b78a3f;
+  transform: rotate(45deg);
+  box-shadow: 0 0 0 5px rgba(183, 138, 63, 0.12);
+}
+
+.theme-dota .hero h1,
+.theme-dota .method-statement h2,
+.theme-dota .section-heading h2,
+.theme-dota .principles h2,
+.theme-dota .axis-card h3,
+.theme-dota .project-body h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+}
+
+.theme-dota .hero h1 {
+  max-width: 720px;
+  color: #222a23;
+  font-size: 72px;
+  line-height: 0.99;
+}
+
+.theme-dota .hero h1 span {
+  color: #813b34;
+}
+
+.theme-dota .hero-copy {
+  max-width: 610px;
+  color: #555e54;
+}
+
+.theme-dota .button {
+  border-radius: 4px;
+}
+
+.theme-dota .button.primary {
+  background: #2f604c;
+}
+
+.theme-dota .button.primary:hover,
+.theme-dota .button.primary:focus-visible {
+  background: #264f3f;
+}
+
+.theme-dota .button.quiet {
+  border-color: rgba(32, 37, 31, 0.2);
+  background: #f3efe7;
+}
+
+.theme-dota .signal-legend li::before {
+  height: 1px;
+}
+
+.theme-dota .hero-strip {
+  border-color: rgba(32, 37, 31, 0.18);
+  background: #eee9df;
+}
+
+.theme-dota .hero-strip > div {
+  border-color: rgba(32, 37, 31, 0.14);
+}
+
+.theme-dota .metric-index {
+  color: #8d6232;
+}
+
+.theme-dota .metric {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+}
+
+.theme-dota .method-section,
+.theme-dota .systems-section,
+.theme-dota .principles-section {
+  background: #f5f1e9;
+}
+
+.theme-dota .axes-section,
+.theme-dota .catalog-section {
+  background: #e4ded3;
+}
+
+.theme-dota .method-console,
+.theme-dota .axis-card,
+.theme-dota .project-card,
+.theme-dota .catalog-item {
+  border-radius: 3px;
+  background: #faf7f0;
+  box-shadow: 0 8px 24px rgba(40, 45, 38, 0.05);
+}
+
+.theme-dota .workflow-step::before {
+  background: #2d8b68;
+}
+
+.theme-dota .workflow-step:nth-child(2)::before {
+  background: #668c78;
+}
+
+.theme-dota .workflow-step:nth-child(3)::before {
+  background: #b44237;
+}
+
+.theme-dota .workflow-step:nth-child(4)::before {
+  background: #8d6232;
+}
+
+.theme-dota .axis-number {
+  border-radius: 2px;
+}
+
+.theme-dota .axis-card::before {
+  height: 3px;
+}
+
+.theme-dota .project-media img {
+  filter: saturate(0.82) sepia(0.06) contrast(1.04);
+}
+
+.theme-dota .filter-bar {
+  border-radius: 4px;
+  background: #d7d0c4;
+}
+
+.theme-dota .filter-button {
+  border-radius: 2px;
+}
+
+.theme-dota .filter-button.is-active {
+  background: #f8f5ee;
+}
+
+.theme-dota .tag-list li {
+  border-radius: 2px;
+  background: #eee9df;
+}
+
+.theme-dota .site-footer {
+  color: #ede7dc;
+  background: #222923;
+}
+
+@media (max-width: 1100px) {
+  .theme-dota .hero h1 {
+    font-size: 62px;
+  }
+}
+
+@media (max-width: 820px) {
+  .theme-dota .hero-inner {
+    width: calc(100% - 40px);
+  }
+
+  .theme-dota .hero h1 {
+    font-size: 51px;
+  }
+}
+
+@media (max-width: 560px) {
+  .theme-dota .hero-inner {
+    width: calc(100% - 32px);
+  }
+
+  .theme-dota .hero h1 {
+    font-size: 42px;
+  }
+
+  .theme-dota .hero-copy {
+    font-size: 15px;
+  }
+}
