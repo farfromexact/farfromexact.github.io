@@ -89,13 +89,9 @@ const hero = document.querySelector(".hero");
 
 if (canvas && hero) {
   const context = canvas.getContext("2d");
-  const trackDefinitions = [
-    { label: "MARKET REGIME", color: "#0071e3", phase: 0.02, speed: 0.000045 },
-    { label: "OPTIONS + VOL", color: "#00a68a", phase: 0.24, speed: 0.000052 },
-    { label: "RISK + CAPITAL", color: "#d05a2a", phase: 0.46, speed: 0.000041 },
-    { label: "RESEARCH", color: "#a44c86", phase: 0.68, speed: 0.000048 }
-  ];
-
+  const brass = "#c59a52";
+  const glass = "#58aaa1";
+  const copper = "#b86c43";
   let width = 1;
   let height = 1;
   let pixelRatio = 1;
@@ -113,195 +109,220 @@ if (canvas && hero) {
     return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
   };
 
-  const quadraticPoint = (start, control, end, progress) => {
-    const inverse = 1 - progress;
-
-    return {
-      x:
-        inverse * inverse * start.x +
-        2 * inverse * progress * control.x +
-        progress * progress * end.x,
-      y:
-        inverse * inverse * start.y +
-        2 * inverse * progress * control.y +
-        progress * progress * end.y
-    };
+  const drawWindow = (x, y, size, lit) => {
+    context.fillStyle = lit ? "rgba(230, 174, 78, 0.82)" : "rgba(67, 137, 133, 0.32)";
+    context.fillRect(x, y, size, size * 1.45);
   };
 
-  const pathGeometry = (index, hub, compact) => {
-    if (compact) {
-      const startX = [0.08, 0.26, 0.48, 0.64][index] * width;
-      const startY = [0.6, 0.52, 0.57, 0.49][index] * height;
-      const controlX = [0.35, 0.48, 0.61, 0.7][index] * width;
-      const controlY = [0.67, 0.58, 0.72, 0.59][index] * height;
+  const drawTower = (x, baseY, towerWidth, towerHeight, time, index) => {
+    const top = baseY - towerHeight;
 
-      return {
-        start: { x: startX, y: startY },
-        control: { x: controlX, y: controlY },
-        end: hub
-      };
-    }
-
-    const startX = Math.max(width * 0.58, Math.min(width - 280, 700));
-    const startY = [0.16, 0.33, 0.66, 0.81][index] * height;
-    const controlX = [0.71, 0.73, 0.7, 0.74][index] * width;
-    const controlY = [0.14, 0.35, 0.69, 0.83][index] * height;
-
-    return {
-      start: { x: startX + index * 10, y: startY },
-      control: { x: controlX, y: controlY },
-      end: hub
-    };
-  };
-
-  const drawTrack = (definition, index, time, hub, compact) => {
-    const geometry = pathGeometry(index, hub, compact);
-
-    [-7, 0, 7].forEach((offset, lineIndex) => {
-      context.beginPath();
-      context.moveTo(geometry.start.x, geometry.start.y + offset);
-      context.quadraticCurveTo(
-        geometry.control.x,
-        geometry.control.y + offset * 0.5,
-        geometry.end.x,
-        geometry.end.y
-      );
-      context.setLineDash(lineIndex === 1 ? [7, 11] : [2, 13]);
-      context.lineDashOffset = -time * (0.012 + index * 0.002) - offset;
-      context.lineWidth = lineIndex === 1 ? 1.35 : 0.7;
-      context.strokeStyle = rgba(definition.color, lineIndex === 1 ? 0.34 : 0.12);
-      context.stroke();
-    });
-
-    context.setLineDash([]);
-
-    const particleCount = compact ? 4 : 6;
-
-    for (let particleIndex = 0; particleIndex < particleCount; particleIndex += 1) {
-      const progress =
-        (time * definition.speed + particleIndex / particleCount + definition.phase) % 1;
-      const point = quadraticPoint(
-        geometry.start,
-        geometry.control,
-        geometry.end,
-        progress
-      );
-      const pulse = 1 + Math.sin(time * 0.004 + particleIndex + index) * 0.35;
-
-      context.beginPath();
-      context.arc(point.x, point.y, (compact ? 1.8 : 2.2) * pulse, 0, Math.PI * 2);
-      context.fillStyle = rgba(definition.color, 0.9);
-      context.shadowColor = rgba(definition.color, 0.45);
-      context.shadowBlur = compact ? 6 : 10;
-      context.fill();
-      context.shadowBlur = 0;
-    }
-
-    context.beginPath();
-    context.arc(geometry.start.x, geometry.start.y, compact ? 3 : 4, 0, Math.PI * 2);
-    context.fillStyle = definition.color;
-    context.fill();
-
-    if (!compact) {
-      context.font = '600 10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-      context.fillStyle = "rgba(29, 29, 31, 0.54)";
-      context.textAlign = "left";
-      context.textBaseline = "middle";
-      context.fillText(definition.label, geometry.start.x + 12, geometry.start.y);
-    }
-  };
-
-  const drawHub = (hub, time, compact) => {
-    const radii = compact ? [70, 51, 33] : [126, 92, 58];
-
-    radii.forEach((radius, index) => {
-      context.beginPath();
-      context.arc(hub.x, hub.y, radius, 0, Math.PI * 2);
-      context.setLineDash(index === 1 ? [4, 8] : [2, 11]);
-      context.lineDashOffset = (index % 2 === 0 ? -1 : 1) * time * 0.012;
-      context.lineWidth = index === 2 ? 1.4 : 0.8;
-      context.strokeStyle = `rgba(29, 29, 31, ${index === 2 ? 0.24 : 0.13})`;
-      context.stroke();
-    });
-
-    context.setLineDash([]);
-
-    trackDefinitions.forEach((definition, index) => {
-      const startAngle = -Math.PI / 2 + index * (Math.PI / 2) + time * 0.00005;
-      const endAngle = startAngle + Math.PI * 0.28;
-
-      context.beginPath();
-      context.arc(hub.x, hub.y, radii[0], startAngle, endAngle);
-      context.lineWidth = compact ? 2.4 : 3;
-      context.lineCap = "round";
-      context.strokeStyle = definition.color;
-      context.stroke();
-    });
-
-    context.beginPath();
-    context.arc(hub.x, hub.y, compact ? 27 : 45, 0, Math.PI * 2);
-    context.fillStyle = "rgba(255, 255, 255, 0.94)";
-    context.shadowColor = "rgba(29, 29, 31, 0.14)";
-    context.shadowBlur = compact ? 18 : 28;
-    context.fill();
-    context.shadowBlur = 0;
-    context.strokeStyle = "rgba(29, 29, 31, 0.18)";
+    context.fillStyle = index % 2 === 0 ? "rgba(3, 24, 27, 0.9)" : "rgba(6, 31, 33, 0.94)";
+    context.strokeStyle = "rgba(195, 154, 81, 0.44)";
     context.lineWidth = 1;
+    context.beginPath();
+    context.moveTo(x, baseY);
+    context.lineTo(x, top + 22);
+    context.lineTo(x + towerWidth * 0.18, top + 22);
+    context.lineTo(x + towerWidth * 0.18, top + 10);
+    context.lineTo(x + towerWidth * 0.38, top + 10);
+    context.lineTo(x + towerWidth * 0.5, top);
+    context.lineTo(x + towerWidth * 0.62, top + 10);
+    context.lineTo(x + towerWidth * 0.82, top + 10);
+    context.lineTo(x + towerWidth * 0.82, top + 22);
+    context.lineTo(x + towerWidth, top + 22);
+    context.lineTo(x + towerWidth, baseY);
+    context.closePath();
+    context.fill();
+    context.stroke();
+
+    const columns = Math.max(2, Math.floor(towerWidth / 18));
+    const rows = Math.max(3, Math.floor(towerHeight / 28));
+    const stepX = towerWidth / (columns + 1);
+    const stepY = (towerHeight - 30) / (rows + 1);
+
+    for (let row = 1; row <= rows; row += 1) {
+      for (let column = 1; column <= columns; column += 1) {
+        const lit = (row + column + index) % 3 !== 0;
+        drawWindow(x + column * stepX - 2, top + 25 + row * stepY, 4, lit);
+      }
+    }
+
+    context.beginPath();
+    context.moveTo(x + towerWidth * 0.5, top);
+    context.lineTo(x + towerWidth * 0.5, top - 18 - Math.sin(time * 0.001 + index) * 2);
+    context.strokeStyle = rgba(brass, 0.5);
+    context.stroke();
+  };
+
+  const drawTube = (startX, startY, endX, endY, time, phase) => {
+    const controlX = (startX + endX) / 2;
+    const controlY = Math.min(startY, endY) - height * 0.08;
+
+    context.beginPath();
+    context.moveTo(startX, startY);
+    context.quadraticCurveTo(controlX, controlY, endX, endY);
+    context.lineWidth = 7;
+    context.strokeStyle = rgba(glass, 0.12);
     context.stroke();
 
     context.beginPath();
-    context.arc(hub.x, hub.y - (compact ? 6 : 9), compact ? 3 : 4, 0, Math.PI * 2);
-    context.fillStyle = "#1d1d1f";
+    context.moveTo(startX, startY);
+    context.quadraticCurveTo(controlX, controlY, endX, endY);
+    context.setLineDash([4, 10]);
+    context.lineDashOffset = -time * 0.018 - phase;
+    context.lineWidth = 1;
+    context.strokeStyle = rgba(brass, 0.62);
+    context.stroke();
+    context.setLineDash([]);
+  };
+
+  const drawGauge = (x, y, radius, time, compact) => {
+    context.save();
+    context.translate(x, y);
+    context.beginPath();
+    context.arc(0, 0, radius, 0, Math.PI * 2);
+    context.fillStyle = "rgba(4, 24, 27, 0.76)";
+    context.fill();
+    context.lineWidth = compact ? 3 : 5;
+    context.strokeStyle = rgba(brass, 0.78);
+    context.stroke();
+
+    for (let index = 0; index < 13; index += 1) {
+      const angle = Math.PI * 0.75 + index * (Math.PI * 1.5) / 12;
+      const inner = radius * (index % 3 === 0 ? 0.7 : 0.76);
+      context.beginPath();
+      context.moveTo(Math.cos(angle) * inner, Math.sin(angle) * inner);
+      context.lineTo(Math.cos(angle) * radius * 0.88, Math.sin(angle) * radius * 0.88);
+      context.strokeStyle = rgba(brass, index % 3 === 0 ? 0.72 : 0.38);
+      context.lineWidth = 1;
+      context.stroke();
+    }
+
+    const needleAngle = Math.PI * 0.85 + Math.sin(time * 0.00055) * 0.12;
+    context.beginPath();
+    context.moveTo(0, 0);
+    context.lineTo(Math.cos(needleAngle) * radius * 0.62, Math.sin(needleAngle) * radius * 0.62);
+    context.lineWidth = 2;
+    context.strokeStyle = copper;
+    context.stroke();
+    context.beginPath();
+    context.arc(0, 0, 4, 0, Math.PI * 2);
+    context.fillStyle = brass;
     context.fill();
 
+    context.fillStyle = "rgba(237, 222, 194, 0.78)";
+    context.font = `${compact ? 7 : 9}px Georgia, serif`;
     context.textAlign = "center";
-    context.textBaseline = "middle";
-    context.fillStyle = "rgba(29, 29, 31, 0.88)";
-    context.font = compact
-      ? '650 8px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
-      : '650 10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-    context.fillText(compact ? "REVIEW" : "DECISION", hub.x, hub.y + (compact ? 7 : 9));
-
-    if (!compact) {
-      context.fillStyle = "rgba(29, 29, 31, 0.42)";
-      context.font = '500 9px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-      context.fillText("NOT PREDICTION", hub.x, hub.y + 24);
-    }
+    context.fillText("PRESSURE", 0, radius * 0.38);
+    context.fillText("7.4 ATM", 0, radius * 0.55);
+    context.restore();
   };
 
   const drawField = (time = 0) => {
     context.clearRect(0, 0, width, height);
-
     const compact = width < 820;
-    pointerX += (pointerTargetX - pointerX) * 0.045;
-    pointerY += (pointerTargetY - pointerY) * 0.045;
-
-    const hub = {
-      x: width * (compact ? 0.77 : 0.82) + pointerX,
-      y: height * (compact ? 0.7 : 0.44) + pointerY
-    };
+    pointerX += (pointerTargetX - pointerX) * 0.04;
+    pointerY += (pointerTargetY - pointerY) * 0.04;
+    const cityLeft = compact ? width * 0.08 : width * 0.58;
+    const cityWidth = compact ? width * 0.84 : width * 0.38;
+    const baseY = compact ? height * 0.91 : height * 0.83;
 
     context.save();
+    context.translate(pointerX, pointerY);
 
-    const cloudCount = compact ? 18 : 34;
-
-    for (let index = 0; index < cloudCount; index += 1) {
-      const angle = index * 2.399963 + time * 0.000025;
-      const radius = (compact ? 92 : 168) + (index % 5) * (compact ? 10 : 15);
-      const x = hub.x + Math.cos(angle) * radius;
-      const y = hub.y + Math.sin(angle) * radius * 0.66;
-
+    for (let index = 0; index < 5; index += 1) {
+      const y = height * (0.08 + index * 0.11) + Math.sin(time * 0.0003 + index) * 8;
       context.beginPath();
-      context.arc(x, y, index % 4 === 0 ? 1.5 : 0.9, 0, Math.PI * 2);
-      context.fillStyle = `rgba(29, 29, 31, ${index % 4 === 0 ? 0.15 : 0.08})`;
-      context.fill();
+      context.moveTo(cityLeft - 60, y);
+      context.bezierCurveTo(
+        cityLeft + cityWidth * 0.22,
+        y + 18,
+        cityLeft + cityWidth * 0.62,
+        y - 22,
+        width + 60,
+        y + 4
+      );
+      context.lineWidth = index === 0 ? 1.2 : 0.7;
+      context.strokeStyle = `rgba(82, 169, 159, ${0.12 - index * 0.012})`;
+      context.stroke();
     }
 
-    trackDefinitions.forEach((definition, index) => {
-      drawTrack(definition, index, time, hub, compact);
+    const towers = compact
+      ? [
+          [0.02, 0.18, 0.54],
+          [0.22, 0.15, 0.38],
+          [0.41, 0.21, 0.69],
+          [0.68, 0.16, 0.45],
+          [0.83, 0.13, 0.3]
+        ]
+      : [
+          [0.02, 0.17, 0.48],
+          [0.22, 0.13, 0.34],
+          [0.38, 0.19, 0.65],
+          [0.62, 0.15, 0.42],
+          [0.8, 0.16, 0.54]
+        ];
+
+    towers.forEach(([offset, widthRatio, heightRatio], index) => {
+      drawTower(
+        cityLeft + cityWidth * offset,
+        baseY,
+        cityWidth * widthRatio,
+        height * heightRatio,
+        time,
+        index
+      );
     });
 
-    drawHub(hub, time, compact);
+    drawTube(
+      cityLeft + cityWidth * 0.08,
+      baseY - height * 0.31,
+      cityLeft + cityWidth * 0.45,
+      baseY - height * 0.42,
+      time,
+      0
+    );
+    drawTube(
+      cityLeft + cityWidth * 0.48,
+      baseY - height * 0.27,
+      cityLeft + cityWidth * 0.88,
+      baseY - height * 0.35,
+      time,
+      17
+    );
+
+    const gaugeX = compact ? width * 0.83 : width * 0.86;
+    const gaugeY = compact ? height * 0.48 : height * 0.28;
+    drawGauge(gaugeX, gaugeY, compact ? 35 : 52, time, compact);
+
+    const lightX = cityLeft + cityWidth * 0.47;
+    const lightY = baseY - height * 0.69 - 24;
+    context.beginPath();
+    context.moveTo(lightX, lightY);
+    context.lineTo(lightX - cityWidth * 0.26, lightY + 58);
+    context.lineTo(lightX + cityWidth * 0.16, lightY + 58);
+    context.closePath();
+    context.fillStyle = rgba(brass, 0.045 + Math.sin(time * 0.0012) * 0.012);
+    context.fill();
+
+    for (let index = 0; index < (compact ? 18 : 30); index += 1) {
+      const bubbleX = cityLeft + ((index * 61) % Math.max(1, cityWidth));
+      const travel = (time * (0.018 + (index % 5) * 0.004) + index * 37) % (height * 0.82);
+      const bubbleY = baseY - travel;
+      const radius = 1 + (index % 4) * 0.7;
+      context.beginPath();
+      context.arc(bubbleX, bubbleY, radius, 0, Math.PI * 2);
+      context.strokeStyle = `rgba(128, 199, 189, ${0.16 + (index % 3) * 0.06})`;
+      context.lineWidth = 0.7;
+      context.stroke();
+    }
+
+    context.fillStyle = "rgba(221, 203, 168, 0.48)";
+    context.textAlign = "left";
+    context.font = `${compact ? 8 : 10}px Georgia, serif`;
+    context.fillText("RAPTURE / DEPTH 1946m", cityLeft, baseY + 22);
+    context.fillText("LIGHTHOUSE / SIGNAL", lightX + 12, lightY + 2);
     context.restore();
   };
 
@@ -329,7 +350,6 @@ if (canvas && hero) {
     width = Math.max(1, bounds.width);
     height = Math.max(1, bounds.height);
     pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
-
     canvas.width = Math.round(width * pixelRatio);
     canvas.height = Math.round(height * pixelRatio);
     context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
@@ -342,8 +362,8 @@ if (canvas && hero) {
     }
 
     const bounds = hero.getBoundingClientRect();
-    pointerTargetX = ((event.clientX - bounds.left) / bounds.width - 0.5) * 18;
-    pointerTargetY = ((event.clientY - bounds.top) / bounds.height - 0.5) * 14;
+    pointerTargetX = ((event.clientX - bounds.left) / bounds.width - 0.5) * 16;
+    pointerTargetY = ((event.clientY - bounds.top) / bounds.height - 0.5) * 10;
   });
 
   hero.addEventListener("pointerleave", () => {
